@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--I need an Icon here somewhere-->
+    <link rel="stylesheet" href="src/style.css">
+    <title>Star Pizza</title>
+
+  </head>
+  <body>
+    <header>
+      <!--
+        - items needed:
+        Logo | Navbar: Home - Menu - Order - Contact - (Who are we page)? | Darkmode or Lightmode switch
+      -->
+      <navbar>
+        <a><img src="src/images/logo.png" alt="Logo for Star Pizza"></a>
+        <ul role="list" aria-label="Primary navigation list">
+          <li class="nav-item" aria-label="Link to homepage"><a href="index.html">Home</a></li>
+          <li class="nav-item" aria-label="Link to menu page"><a href="menu.html">Menu</a></li>
+          <li class="nav-item" aria-label="Link to order page"><a href="order.html">Order</a></li>
+          <li class="nav-item" aria-label="Link to contact page"><a href="contact.html">Contact</a></li>
+        </ul>
+      </navbar>
+    </header>
+    <main>
+      <!--
+        - Items Needed:
+        Greeting | Information | Menu |
+        greeting and info panels are likely side by side, until they can't fit, then stack. Above should probably be a nice Picture of some pizza making, maybe even a carousel.
+        Menu should be a couple cards with "hot" items, and popular items, with a link to the actual menu.
+        If i get ahead of myself, I'll do an ordering page as well as an item.html page dynamically generated based on each dish, that serves a bunch of information about that dish etc.
+        and if I get that far, I'll do animations and hamburger menus, etc.
+      -->
+        <section>
+          <h2>Velkommen til Star Pizza!</h2>
+          <div>
+            <p>At Star Pizza we use only quality ingredients and prepare the food under hygienic conditions.</p>
+          </div>
+          <div>
+            <p>Dear Customer!
+              We can deliver food for your lunch break if your order at least 2 hours 
+              before delivery.</p>
+          </div>
+          <div>
+            <p>Free delivery every day when buying for at least 110 dkk,-</p>
+          </div>
+        </section>
+        <section>
+          <h2>Popular Orders</h2>
+          <ul role="list" aria-label="List of popular orders">
+            <div class="popular-item"></div>
+            <div class="popular-item"></div>
+            <div class="popular-item"></div>
+            <div class="popular-item"></div>
+            <div class="popular-item"></div>
+          </ul>
+          <info>1. Margarita (Tomato, Cheese)
+            2. Hawaii (Tomato, Cheese, Ham, Pineapple)
+            3. Milano (Tomato, cheese, Ham, Mushrooms)
+            4. Mamma Mia(Tomato, cheese, Ham, Pepperoni, Onions)
+            5. Pepperoni (Tomato, Cheese, Pepperoni, Pineapple)
+            
+            Special offers
+            * Buy 2 family or 4 standard pizzas and get one 1½ liter Cola FREE.
+            * Buy 2 pizzas and get one serving of tzatziki FREE on pick-up.
+            
+            Opening hours
+            Monday, Tuesday     15.00 - 22.00
+            Wednesday           15.00 - 22.00
+            Thursday, Friday    15.00 - 22.00
+            Saturday, Sunday    13.00 - 22.00</info>
+        </section>
+    </main>
+    <footer>
+      <!--
+        - Items Needed:
+        Opening Hours | Contact Info | Copyright | Newsletter subscription
+        The first addon, is a contact formula page on the contact info page as well.
+      -->
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
