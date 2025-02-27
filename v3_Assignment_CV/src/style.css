@@ -1,0 +1,449 @@
+/* Light theme colors */
+:root {
+  --clr-primary-300: #f4e1d2; /* Light sandy color */
+  --clr-primary-400: #e0c4a8;
+  --clr-accent-300: #ffba8f; /* Orange */
+  --clr-accent-400: #c29166;
+  --clr-neutral-300: #3a3a3a; /* Grey for Light mode users */
+  --clr-neutral-400: #f5f5f5;
+}
+
+/* #region Reset */
+
+/* // https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+html, body {
+  margin: 0;
+  padding:0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100%;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion Reset */
+
+/* #region Prefers Dark Mode Colors */
+/* Dark theme colors */
+ /* @media (prefers-color-scheme: dark) {
+:root {
+    --clr-primary-300: #2c3e50;
+    --clr-primary-400: #34495e;
+    --clr-accent-300: #ff8c42;
+    --clr-accent-400: #e67e22;
+    --clr-neutral-300: #ecf0f1;
+    --clr-neutral-400: #bdc3c7;
+  }
+} */
+/* #endregion Prefers Dark Mode */
+
+/* #region Utility classes */
+
+.spacer {
+  margin-block:1em;
+}
+
+.spacer-2{
+  margin-block:2em;
+}
+/* #endregion Utility classes */
+
+/* #region toplink anchor tag */
+
+a {
+  text-decoration: none;
+  color: var(--clr-neutral-300)
+}
+a[data="top-link"]{
+  background-color: hsla(0, 0%, 25%, 0.283);
+  position:fixed;
+  bottom:1em;
+  right:1em;
+  z-index: 1000;
+}
+a[data="top-link"]{
+  background-color: hsla(0, 0%, 65%, 0.208);
+}
+
+a[data="top-link"]>img {
+  width:25px;
+  height:auto;
+  display:block;
+}
+
+/* #endregion toplink anchor tag */
+
+.logo-container {
+  max-width: 230px;
+  display: flex;
+  text-align: center;
+}
+
+.logo {
+  width: 100%; /* Make the image fill the container */
+  max-width: 15em;
+  margin: auto;
+  height: auto; /* Make the image fill the container */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  border-radius: 50%; /* Make the image circular */
+  box-shadow: 0 0 1em .3em var(--clr-accent-300);
+}
+
+footer {
+  background-color: var(--clr-primary-400);
+  padding: 1rem;
+  text-align: center;
+  color: var(--clr-neutral-300);
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--clr-primary-300);
+  color: var(--clr-neutral-300);
+  height:100%;
+  width:100%;
+}
+
+.header-container {
+  display:flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  max-width: 230px;
+  height: 100vh;
+  background-color:var(--clr-primary-400);
+}
+
+.side-panel {
+  display: block; /* Show side panel */
+  flex: 0 0 230px; /* Fixed width for side panel */
+}
+
+main {
+  flex: 1 0 auto; /* Main content takes remaining space */
+  padding:1rem;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.card {
+  flex: 1 1 calc(50% - 1em); /* Two cards per row */
+}
+
+footer {
+  display: none;
+}
+
+h1 {
+  display:none;
+}
+
+.logo-container{
+  display:flex;
+  flex-direction:column;
+  margin:1em;
+  justify-content:center;
+  max-width: 230px;
+}
+
+header {
+  background-color: var(--clr-primary-400);
+  padding: 1rem;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+aside.side-panel {
+  background-color: var(--clr-primary-400);
+  padding: 1rem;
+  max-width: 230px;
+  flex: 0 0 auto; /* Fixed width for side panel */
+}
+
+.side-panel-content {
+  color: var(--clr-neutral-300);
+}
+
+.card {
+  background-color: var(--clr-accent-300);
+  padding: 1em;
+  border-radius: 3em;
+  box-shadow: 0 0 1em .3em var(--clr-accent-300);
+  margin-bottom: 1em;
+  max-width: 40em;
+}
+
+.pic2{
+  display:none;
+}
+
+/* Screens between 426px (26.5625em) and 769px (48.0625em) */
+@media (min-width: 26.5625em) and (max-width: 48.0625em) {
+  .header-container{
+    display:block;
+    max-width: 100%;
+    height: 15%;
+
+  }
+  
+  .side-panel {
+    display: none; /* Hide side panel */
+  }
+
+  .profile-pictures {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+
+  .profile-pictures .logo {
+    max-width: 100px; /* Limit picture size */
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .card {
+    width: 33%;
+  }
+}
+
+/* Screens smaller than 426px (26.5625em) */
+@media (max-width: 26.5625em) {
+  html, body {
+    display:block;
+  }
+  
+  .logo-container {
+    display:block;
+    margin:auto;
+  }
+  .header-container {
+    display:block;
+    max-width:100%;
+    height: 15%;
+  }
+
+  .main-content{
+    display:block;
+  }
+
+  .side-panel {
+    display: none; /* Hide side panel */
+  }
+
+  .profile-pictures {
+    display: block;
+    margin:auto;
+  }
+
+  .card{
+    margin-bottom: 10em;
+  }
+  
+  footer {
+    display: block;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    gap: 1em;
+  }
+
+  .card {
+    width: 90%; /* Full width cards with margins */
+    margin: 0 auto;
+  }
+
+  .pic1{
+    display:none;
+  }
+}
+
+/*
+.pic1 {
+  display:none;
+}
+
+section {
+  padding: 1rem;
+}
+
+.heading-div{
+  background-color: var(--clr-accent-400);
+  width: 100%;
+  padding:.3em;
+  border-radius: 5em;
+  text-align: center;
+  box-shadow: 0 0 1em .3em var(--clr-accent-300);
+}
+
+.p-div {
+  background-color: var(--clr-accent-300);
+  padding:1em;
+  border-radius: 3em;
+  box-shadow: 0 0 1em .3em var(--clr-accent-300);
+}
+
+footer {
+  background-color: var(--clr-primary-400);
+  padding: 1rem;
+  text-align: center;
+  color: var(--clr-neutral-300);
+}
+
+@media(min-width: 26.5625em){
+  .logo{
+    display:inline-block;
+    max-width: 60%;
+  }
+  .pic1 {
+    display:none;
+  }
+}
+
+@media(min-width: 48.0625em){
+
+  .logo{
+    display:inline-block;
+    max-width: 100%;
+  }
+
+  .pic1 {
+    display:inline-block;
+  }
+
+  .pic2 {
+    display:none;
+  }
+*/
+/*
+  header {
+    background-color: var(--clr-primary-400);
+    padding: 1rem;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1; /* Allow navbar to grow and take up available space *//*
+    margin: 0 auto; /* Center navbar horizontally *//*
+    max-width: 800px; /* Optional: Set a max-width for the navbar *//*
+  }
+  
+  h1 {
+    flex: 1; /* Allow the heading to grow and take up available space *//*
+    text-align: center; /* Center the heading text *//*
+    margin: 0; /* Remove default margin *//*
+  }
+
+  .main-content-mobile
+  {
+    display: none;
+  }
+
+  .main-content-pc {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap to the next row *//*
+    gap: 1em; /* Add spacing between sections *//*
+  }
+  
+  .main-content-pc .section {
+    flex: 1 1 calc(50% - 1em); /* Each section takes 50% of the width minus the gap *//*
+    display: flex;
+    flex-direction: column; /* Stack heading and paragraph vertically *//*
+    gap: 0.5em; /* Add spacing between heading and paragraph *//*
+  }
+  
+  .main-content-pc .heading-div {
+    order: 1; /* Ensure heading is always first *//*
+  }
+  
+  .main-content-pc .p-div {
+    order: 2; /* Ensure paragraph is always second *//*
+  }
+  
+  @media (max-width: 48.0625em) {
+    .main-content-pc .section {
+      flex: 1 1 100%; /* Each section takes full width on smaller screens *//*
+    }
+  }
+}
+/* Notes:
+- --clr-primary-300: background-color for body
+- --clr-primary-400: background-color for header and footer
+- --clr-neutral-300: text color for body and header
+- --clr-accent-300: not used yet
+- --clr-accent-400: not used yet
+*/
