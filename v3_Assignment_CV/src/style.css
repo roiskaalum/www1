@@ -1,16 +1,16 @@
-/* Light theme colors */
+/* Light theme colors stored in variables to easily switch later, when making the color scheme for dark mode */
 :root {
-  --clr-primary-300: #f4e1d2; /* Light sandy color */
+  --clr-primary-300: #f4e1d2;
   --clr-primary-400: #e0c4a8;
-  --clr-accent-300: #ffba8f; /* Orange */
+  --clr-accent-300: #ffba8f;
   --clr-accent-400: #c29166;
-  --clr-neutral-300: #3a3a3a; /* Grey for Light mode users */
+  --clr-neutral-300: #3a3a3a;
   --clr-neutral-400: #f5f5f5;
 }
 
 /* #region Reset */
 
-/* // https://piccalil.li/blog/a-modern-css-reset */
+/* // https://piccalil.li/blog/a-modern-css-reset -> But slightly modified */
 
 /* Box sizing rules */
 *,
@@ -75,20 +75,6 @@ svg {
 
 /* #endregion Reset */
 
-/* #region Prefers Dark Mode Colors */
-/* Dark theme colors */
- /* @media (prefers-color-scheme: dark) {
-:root {
-    --clr-primary-300: #2c3e50;
-    --clr-primary-400: #34495e;
-    --clr-accent-300: #ff8c42;
-    --clr-accent-400: #e67e22;
-    --clr-neutral-300: #ecf0f1;
-    --clr-neutral-400: #bdc3c7;
-  }
-} */
-/* #endregion Prefers Dark Mode */
-
 /* #region Utility classes */
 
 .spacer {
@@ -125,151 +111,140 @@ a[data="top-link"]>img {
 
 /* #endregion toplink anchor tag */
 
-.logo-container {
-  max-width: 230px;
-  display: flex;
-  text-align: center;
-}
-
-.logo {
-  width: 100%; /* Make the image fill the container */
-  max-width: 15em;
-  margin: auto;
-  height: auto; /* Make the image fill the container */
-  object-fit: cover; /* Ensure the image covers the container without distortion */
-  border-radius: 50%; /* Make the image circular */
-  box-shadow: 0 0 1em .3em var(--clr-accent-300);
-}
-
-footer {
-  background-color: var(--clr-primary-400);
-  padding: 1rem;
-  text-align: center;
-  color: var(--clr-neutral-300);
-  bottom: 0;
-  width: 100%;
-}
-
 body {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
+  /* Sets some basic styling rules that are the same in most places. Color of text doesn't change in this case(except for dark mode) */
   font-family: Arial, sans-serif;
   background-color: var(--clr-primary-300);
   color: var(--clr-neutral-300);
-  height:100%;
-  width:100%;
 }
+
+/* Size of the divs containing the images, so this element decides the size of the images */
+.logo-container {
+  width: 80%;
+  height: auto;
+  margin:auto;
+  padding:1em;
+}
+
+/* The images themselves, the class for the actual images, all of them */
+.logo {
+  width: 100%;
+  height: auto;
+  
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 1em .3em var(--clr-accent-300);
+}
+
+.body-flex-container {
+  /* It's called flex, but I'm using grid xD, I can't be bothered to replace the name xD */
+  /* For some reason, I can't make the grid 100% of the width, I don't know which element is making it overflow, creating a scrollbar */
+  display: grid;
+  grid-template-columns: 25% 72% ;
+  gap: 1.5em;
+  height: 100vh;
+
+}
+
+/* Container for the logo container and sidepanel. That's why Flexbox is used */
 
 .header-container {
-  display:flex;
-  flex-direction: column;
-  flex: 0 0 auto;
-  max-width: 230px;
-  height: 100vh;
-  background-color:var(--clr-primary-400);
-}
-
-.side-panel {
-  display: block; /* Show side panel */
-  flex: 0 0 230px; /* Fixed width for side panel */
-}
-
-main {
-  flex: 1 0 auto; /* Main content takes remaining space */
-  padding:1rem;
-}
-
-.main-content {
+  /* To reverse the order of how the header or sidepanel are displayed */
+  /* justify content right is to start expanding or shrinking from the top */
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5em;
+  flex-direction: column-reverse;
+  justify-content:right ;
+  background-color: var(--clr-primary-400);
+  
+}
+navbar {
+  /* To reverse the order that the images are displayed in */
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-.card {
-  flex: 1 1 calc(50% - 1em); /* Two cards per row */
+h1 {
+  /* We're using the sidepanel to display this and the footer */
+  display:none;
+}
+
+aside.side-panel {
+  /* to add space to read the h2 and contact me on the side panel */
+  text-align: center;
 }
 
 footer {
   display: none;
-}
-
-h1 {
-  display:none;
-}
-
-.logo-container{
-  display:flex;
-  flex-direction:column;
-  margin:1em;
-  justify-content:center;
-  max-width: 230px;
-}
-
-header {
   background-color: var(--clr-primary-400);
   padding: 1rem;
   text-align: center;
-  flex: 0 0 auto;
+  bottom: 0;
+  width: 100%;
 }
 
-aside.side-panel {
-  background-color: var(--clr-primary-400);
-  padding: 1rem;
-  max-width: 230px;
-  flex: 0 0 auto; /* Fixed width for side panel */
+.main-content {
+  place-items: center;
 }
 
-.side-panel-content {
-  color: var(--clr-neutral-300);
+.spacer .spacer-2 {
+  display: none;
 }
 
 .card {
   background-color: var(--clr-accent-300);
   padding: 1em;
-  border-radius: 3em;
+  margin:1em;
+  border-radius: 2.5em;
   box-shadow: 0 0 1em .3em var(--clr-accent-300);
-  margin-bottom: 1em;
-  max-width: 40em;
 }
 
-.pic2{
+.logo-container:last-child{
   display:none;
 }
 
 /* Screens between 426px (26.5625em) and 769px (48.0625em) */
-@media (min-width: 26.5625em) and (max-width: 48.0625em) {
-  .header-container{
+@media(max-width: 48.0625em) {
+.body-flex-container {
+  /* Change size of the grids, basically becomes block display, or flexwrap with every element taking up 100% anyway */
+    grid-template-columns: 100%;
+  }
+
+  h1 {
+    /* Basically the title of the page */
     display:block;
-    max-width: 100%;
-    height: 15%;
-
-  }
-  
-  .side-panel {
-    display: none; /* Hide side panel */
   }
 
-  .profile-pictures {
+  header {
+    /* Rearranges the things in the header to be centered, and stacked, instead of being lined up side by side */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5em;
   }
 
-  .profile-pictures .logo {
-    max-width: 100px; /* Limit picture size */
-  }
-
-  .main-content {
+  navbar{
+    /* Prevents the 2 images from being stacked, and places them horizontally */
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1em;
   }
 
+  .side-panel {
+    /* Hide side panel */
+    display: none;
+  }
+  
+  .logo {
+    /* Limit picture size for better display at tablet sizes */
+    max-width: 15em;
+  }
+  
   .card {
-    width: 33%;
+    width: 75%;
+    text-align: center;
+  }
+
+  footer{
+    /* Footer and sidepanel have overlapping, content, with sidepanel gone, the footer needs to be reactivated */
+    display:block;
   }
 }
 
@@ -279,171 +254,39 @@ aside.side-panel {
     display:block;
   }
   
-  .logo-container {
-    display:block;
-    margin:auto;
-  }
-  .header-container {
-    display:block;
-    max-width:100%;
-    height: 15%;
-  }
-
-  .main-content{
-    display:block;
-  }
-
-  .side-panel {
-    display: none; /* Hide side panel */
-  }
-
-  .profile-pictures {
-    display: block;
-    margin:auto;
-  }
-
-  .card{
-    margin-bottom: 10em;
+  .logo-container:nth-child(2), .logo-container:first-child{
+    display:none;
   }
   
-  footer {
-    display: block;
+  .logo-container:last-child {
+    display:block;
   }
-
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content */
-    gap: 1em;
-  }
-
+  
   .card {
-    width: 90%; /* Full width cards with margins */
-    margin: 0 auto;
-  }
-
-  .pic1{
-    display:none;
+    width: 95%; /* Full width cards with margins */
+    text-align: left;
   }
 }
 
-/*
-.pic1 {
-  display:none;
-}
-
-section {
-  padding: 1rem;
-}
-
-.heading-div{
-  background-color: var(--clr-accent-400);
-  width: 100%;
-  padding:.3em;
-  border-radius: 5em;
-  text-align: center;
-  box-shadow: 0 0 1em .3em var(--clr-accent-300);
-}
-
-.p-div {
-  background-color: var(--clr-accent-300);
-  padding:1em;
-  border-radius: 3em;
-  box-shadow: 0 0 1em .3em var(--clr-accent-300);
-}
-
-footer {
-  background-color: var(--clr-primary-400);
-  padding: 1rem;
-  text-align: center;
-  color: var(--clr-neutral-300);
-}
-
-@media(min-width: 26.5625em){
-  .logo{
-    display:inline-block;
-    max-width: 60%;
-  }
-  .pic1 {
-    display:none;
-  }
-}
-
-@media(min-width: 48.0625em){
-
-  .logo{
-    display:inline-block;
-    max-width: 100%;
-  }
-
-  .pic1 {
-    display:inline-block;
-  }
-
-  .pic2 {
-    display:none;
-  }
-*/
-/*
-  header {
-    background-color: var(--clr-primary-400);
-    padding: 1rem;
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-  }
-  
-  navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1; /* Allow navbar to grow and take up available space *//*
-    margin: 0 auto; /* Center navbar horizontally *//*
-    max-width: 800px; /* Optional: Set a max-width for the navbar *//*
-  }
-  
-  h1 {
-    flex: 1; /* Allow the heading to grow and take up available space *//*
-    text-align: center; /* Center the heading text *//*
-    margin: 0; /* Remove default margin *//*
-  }
-
-  .main-content-mobile
-  {
-    display: none;
-  }
-
-  .main-content-pc {
-    display: flex;
-    flex-wrap: wrap; /* Allow sections to wrap to the next row *//*
-    gap: 1em; /* Add spacing between sections *//*
-  }
-  
-  .main-content-pc .section {
-    flex: 1 1 calc(50% - 1em); /* Each section takes 50% of the width minus the gap *//*
-    display: flex;
-    flex-direction: column; /* Stack heading and paragraph vertically *//*
-    gap: 0.5em; /* Add spacing between heading and paragraph *//*
-  }
-  
-  .main-content-pc .heading-div {
-    order: 1; /* Ensure heading is always first *//*
-  }
-  
-  .main-content-pc .p-div {
-    order: 2; /* Ensure paragraph is always second *//*
-  }
-  
-  @media (max-width: 48.0625em) {
-    .main-content-pc .section {
-      flex: 1 1 100%; /* Each section takes full width on smaller screens *//*
-    }
-  }
-}
 /* Notes:
 - --clr-primary-300: background-color for body
 - --clr-primary-400: background-color for header and footer
 - --clr-neutral-300: text color for body and header
 - --clr-accent-300: not used yet
 - --clr-accent-400: not used yet
-*/
+
+
+
+/* #region Prefers Dark Mode Colors */
+/* Dark theme colors */
+ /* @media (prefers-color-scheme: dark) {
+:root {
+    --clr-primary-300: #2c3e50;
+    --clr-primary-400: #34495e;
+    --clr-accent-300: #ff8c42;
+    --clr-accent-400: #e67e22;
+    --clr-neutral-300: #ecf0f1;
+    --clr-neutral-400: #bdc3c7;
+  }
+} */
+/* #endregion Prefers Dark Mode */
