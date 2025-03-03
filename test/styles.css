@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100px; /* Restrict height so items wrap */
+    align-content: flex-start; /* Ensures columns align from the left */
+}
+
+.item {
+    background-color: lightblue;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 10px; /* Ensures content has some spacing */
+}
+/* First item of each row: Takes only as much space as needed */
+.item {
+    flex: 1; /* Takes up remaining space */
+    background-color: lightcoral; /* Just to visualize it */
+}
+.item:last-child {
+    flex: 0 1 auto; /* No growing, width based on content */
+    background-color: aqua;
+}

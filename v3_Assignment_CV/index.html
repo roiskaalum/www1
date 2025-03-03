@@ -29,7 +29,7 @@
           <div class="side-panel-content">
             <h2>Rói's CV</h2>
             <p><strong>Contact me at: </strong><a href="mailto:roi.skaalum@gmail.com?Subject=From%20CV%20Website:%20">roi.skaalum@gmail.com</a></p>
-            <div>
+            <div class="social-list-container">
               <ul role="list" class="social-list" aria-label="List of Links to Socials">
                 <li class="social-list-item"><a href="https://github.com/roiskaalum"><img src="src/images/social_icons_github.png" alt="Social Link to Github"></a></li>
                 <li class="social-list-item"><a href="https://www.facebook.com/roi.skaalum.1"><img src="src/images/social_icons_facebook.png" alt="Social Link to Facebook"></a></li>
@@ -43,9 +43,18 @@
         </aside>
       </div>
       <main>
+        <section class="main-header">
+          <div class="container">
+            <ul role="list">
+              <li class="main-nav-list-item"><a href="index.html">Home</a></li>
+              <li class="main-nav-list-item"><a href="#contact_me">Email</a></li>
+              <li class="main-nav-list-item"><a href="contact.html">Contact Form</a></li>
+            </ul>
+          </div>
+        </section>
         <section class="main-content">
           <div class="spacer-2"></div>
-          <div class="card">
+          <div class="card" id="about_me">
             <div class="heading-div">
               <h2>About Me</h2>
             </div>
@@ -54,7 +63,7 @@
             </div>
           </div>
           <div class="spacer-2"></div>
-          <div class="card">
+          <div class="card" id="experience">
             <div class="heading-div">
               <h2>Experience</h2>
             </div>
@@ -63,7 +72,7 @@
             </div>
           </div>
           <div class="spacer-2"></div>
-          <div class="card">
+          <div class="card" id="education">
             <div class="heading-div">
               <h2>Education</h2>
             </div>
@@ -75,7 +84,7 @@
         </section>
       </main>
       <footer>
-        <p><strong>Contact me at: </strong><a href="mailto:roi.skaalum@gmail.com?Subject=From%20CV%20Website:%20">roi.skaalum@gmail.com</a></p>
+        <p id="contact_me"><strong>Contact me at: </strong><a href="mailto:roi.skaalum@gmail.com?Subject=From%20CV%20Website:%20">roi.skaalum@gmail.com</a></p>
       </footer>
     </div>
     <script type="module" src="/src/main.js"></script>

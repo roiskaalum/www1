@@ -84,6 +84,11 @@ svg {
 .spacer-2{
   margin-block:2em;
 }
+
+.container {
+  display:flex;
+  
+}
 /* #endregion Utility classes */
 
 /* #region toplink anchor tag */
@@ -124,6 +129,7 @@ body {
   height: auto;
   margin:auto;
   padding:1em;
+  max-width: 20em;
 }
 
 /* The images themselves, the class for the actual images, all of them */
@@ -293,9 +299,41 @@ footer {
 
 /* #region Circular CSS Animation */
 
-li.social-list-item {
+/* .social-list-container {
+  background-color: red;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+.social-list-container>ul {
+  display: flex;
+  gap:.3em;
+  
+  width: 100%;
+  padding:0;
+  margin:auto;
+}
+
+.social-list-container>ul>li{
+  width:5em;
+  justify-content: center;
+  margin:auto;
+}
+
+@media(max-width: 1557px)
+{
+  .social-list-container>ul {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* li.social-list-item {
   display: inline-block;
-  margin: 0 0.5rem;
+  margin:auto;
+  background-color: green;
 }
 
 li.social-list-item>a {
@@ -310,14 +348,14 @@ li.social-list-item>a {
   background-color: var(--clr-primary-400);
   border-radius: 50%;
   transition: color 0.5s ease-in-out;
-}
-
+} */
+/* 
 li.social-list-item>a::after {
   position: absolute;
   z-index: -1;
   content:'';
   inset: -3px;
-  border-radius: inherit;
+  border-radius: inherit; */
 
   /* background: conic-gradient
   (
@@ -328,7 +366,7 @@ li.social-list-item>a::after {
     #0000ff 240deg 300deg,
     #4b0082 300deg 360deg
   ); */
-
+/* 
   background: conic-gradient(greenyellow 100%, transparent 100%);
 }
 
@@ -353,6 +391,6 @@ li.social-list-item>a::after{
   background: conic-gradient(
     greenyellow var(--fill),
     transparent var(--fill));
-}
+} */
 
 /* #endregion Circular CSS Animation */
