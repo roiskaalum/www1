@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul role="list" data-type="form">
+            <li class="main-nav-list-item contact"><a href="index.html">Home</a></li>
+            <li class="main-nav-list-item contact"><a href="mailto:example@example.com">Email</a></li>
+            <li class="main-nav-list-item active contact"><a href="contact.html">Contact Form</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h3>Kontakt Mig</h3>
+        <form autocomplete="on" action="mailto:roi@skaalum@gmail.com" method="post" class="form">
+            <fieldset>
+                <label for="first-name">Fornavn:</label>
+                <input type="text" id="first-name" name="first-name" required><br>
+    
+                <label for="last-name">Efternavn:</label>
+                <input type="text" id="last-name" name="last-name" required><br>
+            </fieldset>
+            <fieldset>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+    
+                <label for="subject">Emne:</label>
+                <input type="text" id="subject" name="subject" required><br>
+                
+                <label for="content">Besked:</label>
+                <textarea rows="6" cols="80" id="message" name="Message" placeholder="Indtast Din Besked Her!"></textarea>
+            </fieldset>
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>

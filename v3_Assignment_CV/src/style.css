@@ -6,6 +6,7 @@
   --clr-accent-400: #c29166;
   --clr-neutral-300: #3a3a3a;
   --clr-neutral-400: #f5f5f5;
+  --clr-toplink: hsla(0, 0%, 65%, 0.208);
 }
 
 /* #region Reset */
@@ -105,7 +106,7 @@ a[data="top-link"]{
   z-index: 1000;
 }
 a[data="top-link"]{
-  background-color: hsla(0, 0%, 65%, 0.208);
+  background-color: var(--clr-toplink)
 }
 
 a[data="top-link"]>img {
@@ -117,6 +118,8 @@ a[data="top-link"]>img {
 /* #endregion toplink anchor tag */
 
 body {
+  margin:0;
+  padding:0;
   /* Sets some basic styling rules that are the same in most places. Color of text doesn't change in this case(except for dark mode) */
   font-family: Arial, sans-serif;
   background-color: var(--clr-primary-300);
@@ -129,7 +132,7 @@ body {
   height: auto;
   margin:auto;
   padding:1em;
-  max-width: 20em;
+  max-width: 16em;
 }
 
 /* The images themselves, the class for the actual images, all of them */
@@ -146,8 +149,7 @@ body {
   /* It's called flex, but I'm using grid xD, I can't be bothered to replace the name xD */
   /* For some reason, I can't make the grid 100% of the width, I don't know which element is making it overflow, creating a scrollbar */
   display: grid;
-  grid-template-columns: 25% 72% ;
-  gap: 1.5em;
+  grid-template-columns: 25% 75% ;
   height: 100vh;
 
 }
@@ -188,8 +190,63 @@ footer {
   width: 100%;
 }
 
+
+
+main {
+  margin:0;
+  padding:0;
+}
+
 .main-content {
   place-items: center;
+  margin-left: 2%;
+}
+
+.main-header {
+  height:4.5em;
+  background-color: var(--clr-primary-400);
+  top:0;
+}
+
+.main-nav{
+  height:100%;
+  background-color: var(--clr-primary-400);
+  
+}
+
+.main-nav>ul {
+  display:flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+}
+
+
+.main-nav-list-item{
+  height: 100%;
+  min-width: 6em;
+}
+
+.main-nav-list-item>a {
+  display:block;
+  text-align: center;
+  align-content: center;
+  height: 100%;
+}
+.main-nav-list-item>a:hover {
+  background-color: hsla(0, 0%, 53%, 0.23);
+}
+
+nav.main-nav>ul>li.active {
+  background: var(--clr-primary-300);
+}
+
+  .main-nav-list-item-div {
+  min-width: 6em;
+  align-content: center;
+  text-align: center;
+  height:100%;
 }
 
 .spacer .spacer-2 {
@@ -207,6 +264,89 @@ footer {
 .logo-container:last-child{
   display:none;
 }
+
+.social-list-container>ul {
+  display: flex;
+  gap:.3em;
+  width: 100%;
+  padding:0;
+}
+
+.social-list-container>ul>li{
+  max-width:5em;
+  padding:0.3em;
+}
+
+@media(max-width: 1557px)
+{
+  .social-list-container>ul {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* #region Contact Form Page CSS */
+
+.contact {
+  background-color: var(--clr-primary-400);
+  height: 4.5em;
+}
+
+form {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    margin: 50px auto; /* Centers horizontally */
+    padding: 15px;
+    background: #383838;
+    color:rgb(223, 219, 219);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds spacing between elements */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #fa1500;
+  box-shadow: 0 0 50px rgba(146, 91, 24, 0.5);
+}
+
+input[type="submit"] {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+/* #endregion Contact Form Page CSS */
 
 /* Screens between 426px (26.5625em) and 769px (48.0625em) */
 @media(max-width: 48.0625em) {
@@ -248,9 +388,26 @@ footer {
     text-align: center;
   }
 
+  .main-content{
+    margin:auto;
+  }
+
   footer{
     /* Footer and sidepanel have overlapping, content, with sidepanel gone, the footer needs to be reactivated */
     display:block;
+  }
+
+ .main-nav>ul {
+  margin: 0;
+  padding:0;
+
+  }
+
+  .social-list-container>ul {
+    display: flex;
+  }
+  .social-list-container>ul>li {
+    margin:auto;
   }
 }
 
@@ -272,20 +429,36 @@ footer {
     width: 95%; /* Full width cards with margins */
     text-align: left;
   }
+
+  .social-list-container>ul {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  }
+
 }
 
-/* Notes:
-- --clr-primary-300: background-color for body
-- --clr-primary-400: background-color for header and footer
-- --clr-neutral-300: text color for body and header
-- --clr-accent-300: not used yet
-- --clr-accent-400: not used yet
-
-
+@media(max-width: 293px){
+  nav.main-nav>ul[data-type="form"]{
+    display: block;
+  }
+  nav.main-nav>ul {
+    flex-direction: column;
+    gap:
+  }
+  .main-header{
+    height:12em;
+  }
+}
 
 /* #region Prefers Dark Mode Colors */
 /* Dark theme colors */
- /* @media (prefers-color-scheme: dark) {
+
+/* In order to see both color schemes, you either have to comment out this one
+   to be able to see the light mode, or you have to change your windows (maybe browser?) preferred color scheme.
+   I couldn't be bothered to add a contrast one just yet. I need to clean up a lot in redundant css and html before I would develop this project further. */
+
+ @media (prefers-color-scheme: dark) {
 :root {
     --clr-primary-300: #2c3e50;
     --clr-primary-400: #34495e;
@@ -293,104 +466,9 @@ footer {
     --clr-accent-400: #e67e22;
     --clr-neutral-300: #ecf0f1;
     --clr-neutral-400: #bdc3c7;
+    --clr-toplink: rgba(162, 159, 159, 0.532);
   }
-} */
+}
 /* #endregion Prefers Dark Mode */
 
-/* #region Circular CSS Animation */
-
-/* .social-list-container {
-  background-color: red;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-
-} */
-
-.social-list-container>ul {
-  display: flex;
-  gap:.3em;
-  
-  width: 100%;
-  padding:0;
-  margin:auto;
-}
-
-.social-list-container>ul>li{
-  width:5em;
-  justify-content: center;
-  margin:auto;
-}
-
-@media(max-width: 1557px)
-{
-  .social-list-container>ul {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-/* li.social-list-item {
-  display: inline-block;
-  margin:auto;
-  background-color: green;
-}
-
-li.social-list-item>a {
-  position: relative;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  width: 4rem;
-  aspect-ratio: 1;
-  font-size: 1.5rem;
-  color:#7a7a7a;
-  background-color: var(--clr-primary-400);
-  border-radius: 50%;
-  transition: color 0.5s ease-in-out;
-} */
-/* 
-li.social-list-item>a::after {
-  position: absolute;
-  z-index: -1;
-  content:'';
-  inset: -3px;
-  border-radius: inherit; */
-
-  /* background: conic-gradient
-  (
-    #ff0000 0 60deg,
-    #ff7f00 60deg 120deg,
-    #ffff00 120deg 180deg,
-    #00ff00 180deg 240deg,
-    #0000ff 240deg 300deg,
-    #4b0082 300deg 360deg
-  ); */
-/* 
-  background: conic-gradient(greenyellow 100%, transparent 100%);
-}
-
-@property --fill {
-  syntax: '<percentage>';
-  inherits: true;
-  initial-value: 0%;
-}
-
-li.social-list-item>a:hover {
-  color: greenyellow;
-  --fill: 100%;
-}
-
-li.social-list-item>a::after{
-  position:absolute;
-  z-index: -1;
-  content: '';
-  inset: -3px;
-  border-radius: inherit;
-
-  background: conic-gradient(
-    greenyellow var(--fill),
-    transparent var(--fill));
-} */
-
-/* #endregion Circular CSS Animation */
+/* At Sizes smaller than 193pixels, it's the padding and long email at the bottom that makes the body scale back disproportionally. I don't imagine there'a many screens that small to begin with, without implementing horizontal scroll somehow. */
