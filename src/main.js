@@ -1,5 +1,3 @@
-console.log("loaded JS");
-display("/src/orders.json");
 async function display(file)
 {
   let o = await fetch(file);
@@ -9,7 +7,6 @@ async function display(file)
   let pizzaElement = "";
   t.pizzas.forEach(item => {
     let ingredients = "";
-    console.log(item.ingredients.length)
     for(let i = 0; i < item.ingredients.length; i++)
     {
       ingredients += item.ingredients[i];
@@ -30,8 +27,10 @@ async function display(file)
     </div>
     `
   });
+  
 
   html.innerHTML = pizzaElement;
+  console.log("Appended pizza elements");
   let drinksElement = "";
   t.drinks.forEach(item => {
     let options = "";
@@ -56,10 +55,12 @@ async function display(file)
     `
   });
   html.innerHTML += drinksElement;
+  console.log("appended drinks");
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("loaded JS");
   const themeToggle = document.querySelector("#theme-toggle");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const storedTheme = localStorage.getItem("theme");
@@ -75,30 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Darkmode Click Function:
   themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
-      if(themeIcon.src.includes("darkmode_white.png"))
-      {
-        themeIcon.src = "src/images/darkmode_black.png";
-        burgerIcon.src = "src/images/nav-burger-menu.png";
-      }
-      else
-      {
-        themeIcon.src = "src/images/darkmode_white.png";
-        burgerIcon.src = "src/images/nav-burger-menu-white.png";
-      }
-    });
+    document.body.classList.toggle("dark");
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    if(themeIcon.src.includes("darkmode_white.png"))
+    {
+      themeIcon.src = "src/images/darkmode_black.png";
+      burgerIcon.src = "src/images/nav-burger-menu.png";
+    }
+    else
+    {
+      themeIcon.src = "src/images/darkmode_white.png";
+      burgerIcon.src = "src/images/nav-burger-menu-white.png";
+    }
+  });
 
-    //Hamburger Click Function:
-    const burgerMenu = document.querySelector("#burger-menu-button");
-    const navList = document.getElementsByClassName("nav-list");
-    const navContainer = document.querySelector(".nav-container");
-    //TODO: Swap src image for hamburger for an opened version of the same color variant.
-    burgerMenu.addEventListener("click", () => {
-        navContainer.classList.toggle("active");
-        burgerMenu.classList.toggle("active");
-        navList.forEach(item => {
-          item.classList.toggle("active");
-        });
-    });
+  //Hamburger Click Function:
+  const burgerMenu = document.querySelector("#burger-menu-button");
+  const navList = document.getElementsByClassName("nav-list");
+  const navContainer = document.querySelector(".nav-container");
+  //TODO: Swap src image for hamburger for an opened version of the same color variant.
+  burgerMenu.addEventListener("click", () => {
+    navContainer.classList.toggle("active");
+    burgerMenu.classList.toggle("active");
+    navList.toggle("active");
+  });
+  display("src/orders.json");
 });
