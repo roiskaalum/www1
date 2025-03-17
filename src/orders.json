@@ -1,0 +1,62 @@
+{
+    "pizzas": [
+      {
+        "name": "Hawaiian Pizza",
+        "image": "src/images/hawaiian",
+        "ingredients": ["Tomato Sauce", "Mozzarella", "Ham", "Pineapple"]
+      },
+      {
+        "name": "Margherita Pizza",
+        "image": "src/images/margherita",
+        "ingredients": ["Tomato Sauce", "Mozzarella", "Basil"]
+      },
+      {
+        "name": "Pepperoni Pizza",
+        "image": "src/images/pepperoni",
+        "ingredients": ["Tomato Sauce", "Mozzarella", "Pepperoni"]
+      },
+      {
+        "name": "Curry Chicken Pizza",
+        "image": "src/images/curry_chicken",
+        "ingredients": ["Curry Sauce", "Mozzarella", "Chicken", "Onions", "Peppers"]
+      },
+      {
+        "name": "Ranch Chicken Pizza",
+        "image": "src/images/ranch_chicken",
+        "ingredients": ["Ranch Sauce", "Mozzarella", "Chicken", "Bacon", "Onions"]
+      },
+      {
+        "name": "Supreme Pizza",
+        "image": "src/images/supreme",
+        "ingredients": ["Tomato Sauce", "Mozzarella", "Pepperoni", "Sausage", "Peppers", "Onions", "Mushrooms", "Olives"]
+      },
+      {
+        "name": "Veggie Lovers Pizza",
+        "image": "src/images/veggie_lovers",
+        "ingredients": ["Tomato Sauce", "Mozzarella", "Peppers", "Onions", "Mushrooms", "Olives", "Spinach"]
+      },
+      {
+        "name": "Squid & Scallop",
+        "image": "src/images/squid_scallop",
+        "ingredients": ["Garlic Sauce", "Squid", "Scallops", "Parsley"]
+      },
+      {
+        "name": "Creamy Mushroom",
+        "image": "src/images/creamy_mushroom",
+        "ingredients": ["Cream Sauce", "Mozzarella", "Mushrooms", "Garlic", "Parmesan"]
+      }
+    ],
+    "drinks": [
+      {
+        "name": "Sparkles",
+        "image": "src/images/sparkles",
+        "options": ["Apple Sparkle", "Berry Sparkle", "Lemon Sparkle"]
+      },
+      {
+        "name": "Soft Drinks",
+        "image": "src/images/soft_drinks",
+        "options": ["Coca-Cola", "Fanta", "Sprite", "Pepsi"]
+      }
+    ]
+  }
+  

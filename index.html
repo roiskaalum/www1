@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="icon" href="src/images/logo.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="src/style.css">
+    
+    <script src="src/main.js" defer></script>
+
+    <title>Star Pizza</title>
+
+  </head>
+  <body>
+    <header>
+      <!--
+        - items needed:
+        Logo | Navbar: Home - Menu - Order - Contact - (Who are we page)? | Darkmode or Lightmode switch
+      -->
+      <div class="burger-menu" role="list" aria-label="Primary Navigation Burger Menu">
+        <button class="burger-menu-button" id="burger-menu-button"><img src="src/images/nav-burger-menu.png" id="burgerImage"></button>
+      </div>
+      <nav>
+        <a><img src="src/images/logo.png" class="logo img" alt="Logo for Star Pizza"></a>
+        <div class="nav-container" role="list" aria-label="Primary Navigation List">
+          <a href="index.html" class="nav-link nav-list" data-type="active" aria-label="Link to Home">Home</a>
+          <a href="menu.html" class="nav-link nav-list" aria-label="Link to Menu">Menu</a>
+          <a href="order.html" class="nav-link nav-list" aria-label="Link to Order">Order</a>
+          <a href="contact.html" class="nav-link nav-list" aria-label="Link to Contact">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-button"><img id="theme-icon" src="src/images/darkmode_black.png"></button>
+      </nav>
+    </header>
+    <!-- This inline style is something that exists to accommodate the header above the carousel. This style will only ever change, if the height of the navbar changes. -->
+    <div style="height: 7em;"></div>
+    <main>
+      <!--
+        - Items Needed:
+        Greeting | Information | Menu |
+        greeting and info panels are likely side by side, until they can't fit, then stack. Above should probably be a nice Picture of some pizza making, maybe even a carousel.
+        Menu should be a couple cards with "hot" items, and popular items, with a link to the actual menu.
+        If i get ahead of myself, I'll do an ordering page as well as an item.html page dynamically generated based on each dish, that serves a bunch of information about that dish etc.
+        and if I get that far, I'll do animations and hamburger menus, etc.
+      -->
+        <section class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="src/images/imagefront_enjoyment.webp" class="img" alt="Image of friends enjoying pizza at Star Pizza">
+            </div>
+            <div class="carousel-item">
+              <img src="src/images/imagefront_storefront.webp" class="img" alt="Storefront of Star Pizza">
+            </div>
+            <div class="carousel-item">
+              <img src="src/images/imagefront_working.webp" class="img" alt="Image of Star Pizza's employees happily working">
+            </div>
+          </div>
+        </section>
+        <section class="main-info container">
+          <div>
+            <h2 data-type="Welcome">Velkommen til Star Pizza!</h2>
+          </div>
+          <div class="main-info-p-container">
+            <p>At Star Pizza we use only quality ingredients and prepare the food under hygienic conditions.</p>
+            <p>Dear Customer!
+              We can deliver food for your lunch break if your order at least 2 hours 
+              before delivery.</p>
+            <p class="grid-third-child">Free delivery every day when buying for at least 110 dkk,-</p>
+          </div>
+        </section>
+        <section>
+          <h2 class="popular-h2">Popular Orders</h2>
+          <div class="container-orders" role="list" aria-label="List of popular orders from the menu."></div>
+          <div class="special-offers container">
+            <p>Special offers:</p>
+            <p>* Buy 2 family or 4 standard pizzas and get one 1½ liter Cola FREE.</p>
+            <p>* Buy 2 pizzas and get one serving of tzatziki FREE on pick-up.</p>
+          </div>
+        </section>
+    </main>
+    <div class="spacer-3"></div>
+    <footer>
+      <!--
+        - Items Needed:
+        Opening Hours | Contact Info | Copyright | Newsletter/Deals subscription | Socials
+        The first addon, is a contact formula page on the contact info page as well.
+      -->
+      <div class="opening-hours">
+        <h2>Opening Hours</h2>
+        <p>Monday, Tuesday: 15.00 - 22.00</p>
+        <p>Wednesday: 15.00 - 22.00</p>
+        <p>Thursday, Friday: 15.00 - 22.00</p>
+        <p>Saturday, Sunday: 13.00 - 22.00</p>
+      </div>
+    </footer>
+  </body>
+</html>
