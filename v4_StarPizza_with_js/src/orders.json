@@ -36,12 +36,12 @@
         "ingredients": ["Tomato Sauce", "Mozzarella", "Peppers", "Onions", "Mushrooms", "Olives", "Spinach"]
       },
       {
-        "name": "Squid & Scallop Pizza",
+        "name": "Squid & Scallop",
         "image": "src/images/squid_scallop",
-        "ingredients": ["Garlic Sauce", "Mozzarella", "Squid", "Scallops", "Parsley"]
+        "ingredients": ["Garlic Sauce", "Squid", "Scallops", "Parsley"]
       },
       {
-        "name": "Creamy Mushroom Pizza",
+        "name": "Creamy Mushroom",
         "image": "src/images/creamy_mushroom",
         "ingredients": ["Cream Sauce", "Mozzarella", "Mushrooms", "Garlic", "Parmesan"]
       }

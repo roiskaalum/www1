@@ -11,7 +11,7 @@
     
     <link rel="stylesheet" href="src/style.css">
     
-    <link rel="stylesheet" href="src/main.js" >
+    <script src="src/main.js" defer></script>
 
     <title>Star Pizza</title>
 
@@ -22,22 +22,19 @@
         - items needed:
         Logo | Navbar: Home - Menu - Order - Contact - (Who are we page)? | Darkmode or Lightmode switch
       -->
-      <navbar class="bg-accent-100">
+      <div class="burger-menu" role="list" aria-label="Primary Navigation Burger Menu">
+        <button class="burger-menu-button" id="burger-menu-button"><img src="src/images/nav-burger-menu.png" id="burgerImage"></button>
+      </div>
+      <nav>
         <a><img src="src/images/logo.png" class="logo img" alt="Logo for Star Pizza"></a>
-        <div class="burger-menu" role="list" aria-label="Primary Navigation Burger Menu">
-          <img src="src/images/nav-burger-menu.png">
-          <a href="index.html" class="nav-link active" aria-label="Link to Home">Home</a>
-          <a href="menu.html" class="nav-link" aria-label="Link to Menu">Menu</a>
-          <a href="order.html" class="nav-link" aria-label="Link to Order">Order</a>
-          <a href="contact.html" class="nav-link" aria-label="Link to Contact">Contact</a>
+        <div class="nav-container" role="list" aria-label="Primary Navigation List">
+          <a href="index.html" class="nav-link nav-list" data-type="active" aria-label="Link to Home">Home</a>
+          <a href="menu.html" class="nav-link nav-list" aria-label="Link to Menu">Menu</a>
+          <a href="order.html" class="nav-link nav-list" aria-label="Link to Order">Order</a>
+          <a href="contact.html" class="nav-link nav-list" aria-label="Link to Contact">Contact</a>
         </div>
-        <div class="nav" role="list" aria-label="Primary Navigation List">
-          <a href="index.html" class="nav-link active" aria-label="Link to Home">Home</a>
-          <a href="menu.html" class="nav-link" aria-label="Link to Menu">Menu</a>
-          <a href="order.html" class="nav-link" aria-label="Link to Order">Order</a>
-          <a href="contact.html" class="nav-link" aria-label="Link to Contact">Contact</a>
-        </div>
-      </navbar>
+        <button id="theme-toggle" class="theme-button"><img id="theme-icon" src="src/images/darkmode_black.png"></button>
+      </nav>
     </header>
     <!-- This inline style is something that exists to accommodate the header above the carousel. This style will only ever change, if the height of the navbar changes. -->
     <div style="height: 7em;"></div>
@@ -76,62 +73,8 @@
           </div>
         </section>
         <section>
-          
           <h2 class="popular-h2">Popular Orders</h2>
-          <ul role="list" data-type="popular-order" aria-label="List of popular orders">
-            <div class="item-div">
-              <div class="item-div">
-              <li class="popular-item">
-                <img src="src/images/margherita_small.jpg" alt="Margarita Pizza Thumbnail">
-                <div class="item-info">
-                  <h3>Margarita</h3>
-                  <p>Tomato, Cheese</p>
-                </div>
-              </li>
-              </div>
-              <div class="item-div">
-              <li class="popular-item">
-                <img src="src/images/hawaiian_small.jpg" alt="Hawaii Pizza Thumbnail">
-                <div class="item-info">
-                  <h3>Hawaii</h3>
-                  <p>Tomato, Cheese, Ham, Pineapple</p>
-                </div>
-              </li>
-              </div>
-              <div class="item-div">
-              <li class="popular-item">
-                <img src="src/images/curry_chicken_small.jpg" alt="Milano Pizza Thumbnail">
-                <div class="item-info">
-                  <h3>Milano</h3>
-                  <p>Tomato, Cheese, Ham, Mushrooms</p>
-                </div>
-              </li>
-              </div>
-              <div class="item-div">
-              <li class="popular-item">
-                <img src="src/images/ranch_chicken_small.jpg" alt="Mamma Mia Pizza Thumbnail">
-                <div class="item-info">
-                  <h3>Mamma Mia</h3>
-                  <p>Tomato, Cheese, Ham, Pepperoni, Onions</p>
-                </div>
-              </li>
-              </div>
-              <div class="item-div">
-              <li class="popular-item">
-                <img src="src/images/pepperoni_small.jpg" alt="Pepperoni Pizza Thumbnail">
-                <div class="item-info">
-                  <h3>Pepperoni</h3>
-                  <p>Tomato, Cheese, Pepperoni, Pineapple</p>
-                </div>
-              </li>
-              </div>
-            </div>
-          </ul>
-          <div class="container-orders">
-            <div class="container-orders-item">
-              <img class="order-img" src="">
-            </div>
-          </div>
+          <div class="container-orders" role="list" aria-label="List of popular orders from the menu."></div>
           <div class="special-offers container">
             <p>Special offers:</p>
             <p>* Buy 2 family or 4 standard pizzas and get one 1½ liter Cola FREE.</p>
@@ -154,6 +97,5 @@
         <p>Saturday, Sunday: 13.00 - 22.00</p>
       </div>
     </footer>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
