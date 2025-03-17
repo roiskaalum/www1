@@ -1,4 +1,5 @@
-display("./src/orders.json");
+console.log("loaded JS");
+display("/src/orders.json");
 async function display(file)
 {
   let o = await fetch(file);
@@ -68,8 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
   //Darkmode detection function:
   if (storedTheme == "dark" || (!storedTheme && prefersDark)) {
     document.body.classList.add("dark");
-    themeIcon.src = "/src/images/darkmode_white.png";
-    burgerIcon.src = "/src/images/nav-burger-menu-white.png";
+    themeIcon.src = "src/images/darkmode_white.png";
+    burgerIcon.src = "src/images/nav-burger-menu-white.png";
   }
 
   //Darkmode Click Function:
@@ -78,13 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
       if(themeIcon.src.includes("darkmode_white.png"))
       {
-        themeIcon.src = "/src/images/darkmode_black.png";
-        burgerIcon.src = "/src/images/nav-burger-menu.png";
+        themeIcon.src = "src/images/darkmode_black.png";
+        burgerIcon.src = "src/images/nav-burger-menu.png";
       }
       else
       {
-        themeIcon.src = "/src/images/darkmode_white.png";
-        burgerIcon.src = "/src/images/nav-burger-menu-white.png";
+        themeIcon.src = "src/images/darkmode_white.png";
+        burgerIcon.src = "src/images/nav-burger-menu-white.png";
       }
     });
 
