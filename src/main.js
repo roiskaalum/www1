@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Hamburger Click Function:
     const burgerMenu = document.querySelector("#burger-menu-button");
-    const navList = document.querySelector(".nav-list");
+    const navList = document.getElementsByClassName("nav-list");
     const navContainer = document.querySelector(".nav-container");
     //TODO: Swap src image for hamburger for an opened version of the same color variant.
     burgerMenu.addEventListener("click", () => {
