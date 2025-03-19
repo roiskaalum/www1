@@ -1,61 +1,72 @@
 async function display(file)
 {
-  let o = await fetch(file);
-  let t = await o.json();
+  try {
+    let o = await fetch(file);
+    let t = await o.json();
 
-  let html = document.getElementsByClassName("container-orders")[0];
-  let pizzaElement = "";
-  t.pizzas.forEach(item => {
-    let ingredients = "";
-    for(let i = 0; i < item.ingredients.length; i++)
-    {
-      ingredients += item.ingredients[i];
-      if(i < item.ingredients.length-1)
+    let html = document.getElementsByClassName("container-orders")[0];
+    let pizzaElement = "";
+    t.pizzas.forEach(item => {
+      let ingredients = "";
+      for(let i = 0; i < item.ingredients.length; i++)
       {
-        ingredients += ", ";
+        ingredients += item.ingredients[i];
+        if(i < item.ingredients.length-1)
+        {
+          ingredients += ", ";
+        }
+        else
+        {
+          ingredients += ".";
+        }
       }
-      else
-      {
-        ingredients += ".";
-      }
-    }
-    pizzaElement += `
-    <div class="container-orders-item">
-      <h4 class="container-orders-item-title">${item.name}</h2>
-      <a href="${item.image}_big.jpg"><img class="container-orders-img" src="${item.image}_small.jpg" alt="${item.name} Thumbnail"></a>
-      <p class="container-orders-p">${ingredients}</p>
-    </div>
-    `
-  });
-  
+      pizzaElement += `
+      <div class="container-orders-item">
+        <h4 class="container-orders-item-title">${item.name}</h2>
+        <a href="${item.image}_big.jpg"><img class="container-orders-img" src="${item.image}_small.jpg" alt="${item.name} Thumbnail"></a>
+        <p class="container-orders-p">${ingredients}</p>
+      </div>
+      `
+    });
+    
 
-  html.innerHTML = pizzaElement;
-  console.log("Appended pizza elements");
-  let drinksElement = "";
-  t.drinks.forEach(item => {
-    let options = "";
-    for(let i = 0;i < item.options.length; i++)
-    {
-      options += item.options[i];
-      if(i <= item.options.length-1)
+    html.innerHTML = pizzaElement;
+    console.log("Appended pizza elements");
+    let drinksElement = "";
+    t.drinks.forEach(item => {
+      let options = "";
+      for(let i = 0;i < item.options.length; i++)
       {
-        options += ", ";
+        options += item.options[i];
+        if(i <= item.options.length-1)
+        {
+          options += ", ";
+        }
+        else
+        {
+          options = ".";
+        }
       }
-      else
-      {
-        options = ".";
-      }
-    }
-    drinksElement += `
-    <div class="container-orders-item">
-      <h4 class="container-orders-title">${item.name}</h4>
-      <a href="${item.image}_big.jpg"><img class="container-orders-img" src="${item.image}_small.jpg"></a>
-      <p class="container-orders-p">${options}</p>
-    </div>
-    `
-  });
-  html.innerHTML += drinksElement;
-  console.log("appended drinks");
+      drinksElement += `
+      <div class="container-orders-item">
+        <h4 class="container-orders-title">${item.name}</h4>
+        <a href="${item.image}_big.jpg"><img class="container-orders-img" src="${item.image}_small.jpg"></a>
+        <p class="container-orders-p">${options}</p>
+      </div>
+      `
+    });
+    html.innerHTML += drinksElement;
+    console.log("appended drinks");
+  }
+  catch(error)
+  {
+    document.getElementsByClassName("container-orders")[0].innerHTML = "Couldn't Fetch from JSON, so Orders List is empty!";
+    console.log("error appeared in json fetching: " + error);
+  }
+  finally
+  {
+    console.log("Fetching Function Call Over!");
+  }
 }
 
 
