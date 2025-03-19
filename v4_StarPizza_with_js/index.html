@@ -1,20 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="src/images/logo.png" type="image/x-icon">
-    
     <link rel="stylesheet" href="src/style.css">
-    
     <script src="src/main.js" defer></script>
-
     <title>Star Pizza</title>
-
   </head>
   <body>
     <header>
@@ -23,7 +18,7 @@
         Logo | Navbar: Home - Menu - Order - Contact - (Who are we page)? | Darkmode or Lightmode switch
       -->
       <div class="burger-menu" role="list" aria-label="Primary Navigation Burger Menu">
-        <button class="burger-menu-button" id="burger-menu-button"><img src="src/images/nav-burger-menu.png" id="burgerImage"></button>
+        <button class="burger-menu-button" id="burger-menu-button"><img src="src/images/nav-burger-menu.png" id="burgerImage" alt="Image For Hamburger Menu For Mobile Navigation"></button>
       </div>
       <nav>
         <a><img src="src/images/logo.png" class="logo img" alt="Logo for Star Pizza"></a>
@@ -33,7 +28,7 @@
           <a href="order.html" class="nav-link nav-list" aria-label="Link to Order">Order</a>
           <a href="contact.html" class="nav-link nav-list" aria-label="Link to Contact">Contact</a>
         </div>
-        <button id="theme-toggle" class="theme-button"><img id="theme-icon" src="src/images/darkmode_black.png"></button>
+        <button id="theme-toggle" class="theme-button"><img id="theme-icon" src="src/images/darkmode_black.png" alt="Image To Indicate A Switch To And From Darkmode"></button>
       </nav>
     </header>
     <!-- This inline style is something that exists to accommodate the header above the carousel. This style will only ever change, if the height of the navbar changes. -->
@@ -47,7 +42,7 @@
         If i get ahead of myself, I'll do an ordering page as well as an item.html page dynamically generated based on each dish, that serves a bunch of information about that dish etc.
         and if I get that far, I'll do animations and hamburger menus, etc.
       -->
-        <section class="carousel">
+        <div class="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="src/images/imagefront_enjoyment.webp" class="img" alt="Image of friends enjoying pizza at Star Pizza">
@@ -59,7 +54,7 @@
               <img src="src/images/imagefront_working.webp" class="img" alt="Image of Star Pizza's employees happily working">
             </div>
           </div>
-        </section>
+        </div>
         <section class="main-info container">
           <div>
             <h2 data-type="Welcome">Velkommen til Star Pizza!</h2>
