@@ -3,46 +3,55 @@
       {
         "name": "Hawaiian Pizza",
         "image": "src/images/hawaiian",
+        "price": 89.99,
         "ingredients": ["Tomato Sauce", "Mozzarella", "Ham", "Pineapple"]
       },
       {
         "name": "Margherita Pizza",
         "image": "src/images/margherita",
+        "price": 89.99,
         "ingredients": ["Tomato Sauce", "Mozzarella", "Basil"]
       },
       {
         "name": "Pepperoni Pizza",
         "image": "src/images/pepperoni",
+        "price": 99.99,
         "ingredients": ["Tomato Sauce", "Mozzarella", "Pepperoni"]
       },
       {
         "name": "Curry Chicken Pizza",
         "image": "src/images/curry_chicken",
+        "price": 109.99,
         "ingredients": ["Curry Sauce", "Mozzarella", "Chicken", "Onions", "Peppers"]
       },
       {
         "name": "Ranch Chicken Pizza",
         "image": "src/images/ranch_chicken",
+        "price": 109.99,
         "ingredients": ["Ranch Sauce", "Mozzarella", "Chicken", "Bacon", "Onions"]
       },
       {
         "name": "Supreme Pizza",
         "image": "src/images/supreme",
+        "price": 129.99,
         "ingredients": ["Tomato Sauce", "Mozzarella", "Pepperoni", "Sausage", "Peppers", "Onions", "Mushrooms", "Olives"]
       },
       {
         "name": "Veggie Lovers Pizza",
         "image": "src/images/veggie_lovers",
+        "price": 99.99,
         "ingredients": ["Tomato Sauce", "Mozzarella", "Peppers", "Onions", "Mushrooms", "Olives", "Spinach"]
       },
       {
         "name": "Squid & Scallop",
         "image": "src/images/squid_scallop",
+        "price": 89.99,
         "ingredients": ["Garlic Sauce", "Squid", "Scallops", "Parsley"]
       },
       {
         "name": "Creamy Mushroom",
         "image": "src/images/creamy_mushroom",
+        "price": 89.99,
         "ingredients": ["Cream Sauce", "Mozzarella", "Mushrooms", "Garlic", "Parmesan"]
       }
     ],
@@ -50,11 +59,13 @@
       {
         "name": "Sparkles",
         "image": "src/images/sparkles",
+        "price": 49.99,
         "options": ["Apple Sparkle", "Berry Sparkle", "Lemon Sparkle"]
       },
       {
         "name": "Soft Drinks",
         "image": "src/images/soft_drinks",
+        "price": 29.99,
         "options": ["Coca-Cola", "Fanta", "Sprite", "Pepsi"]
       }
     ]
